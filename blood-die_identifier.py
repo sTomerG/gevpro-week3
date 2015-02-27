@@ -8,7 +8,7 @@ def main(argv):
 	inputData= open(argv[1],'r')
 	outputFile=open('blood-die_identical.json','w')
 	activeFile = json.load(inputData)
-	CountryInfo =namedtuple('outputTuple', 'country, classification, blood, dying')
+	CountryInfo =namedtuple('Countryinfo', 'country, classification, blood, dying')
 	for line in activeFile:
 		currentTuple = CountryInfo(line[0],line[1],line[2], str(line[3]).rstrip()) #.rstrip() verwijdert \n
 		bloodWords = currentTuple.blood.split(',')
